@@ -103,8 +103,8 @@ class Swimming(Training):
     """Тренировка: плавание."""
 
     LEN_STEP = 1.38
-    K1 = 1.1
-    K2 = 2
+    SPEED = 1.1
+    WEIGHT = 2
 
     def __init__(self,
                  action: int,
@@ -123,7 +123,7 @@ class Swimming(Training):
 
     def get_spent_calories(self) -> float:
         speed = self.get_mean_speed()
-        return (speed + self.K1) * self.K2 * self.weight * self.duration
+        return (speed + self.SPEED) * self.WEIGHT * self.weight * self.duration
 
 
 def read_package(workout_type: str, data: list) -> Training:
